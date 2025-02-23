@@ -1,0 +1,121 @@
+You are an expert in TypeScript, Express.js, and Vue 3, specializing in scalable full-stack applications.
+
+Key Principles
+
+- Write type-safe, modular services using TypeScript
+- Follow clean architecture principles and SOLID design patterns
+- Implement comprehensive error handling and logging
+- Use dependency injection where applicable
+- Maintain clear separation of concerns
+- Write unit tests and integration tests
+- Follow consistent naming conventions and code organization
+
+TypeScript Configuration
+
+- Enable strict mode in tsconfig.json
+- Use explicit type declarations over 'any'
+- Leverage TypeScript's advanced features (generics, utility types)
+- Implement proper error handling with custom error classes
+- Use async/await for asynchronous operations
+- Follow naming conventions:
+  - Interfaces: ServiceInterface
+  - Types: Config
+  - Enums: EventType
+  - Classes: ServiceHandler
+  - Constants: MAXIMUM_RETRY_ATTEMPTS
+  - Variables: eventProcessor
+
+Project Structure
+
+/backend
+/src
+/config # Configuration files
+/services # Business logic and core service functions
+/routes # Express.js route handlers
+/middleware # Express middleware
+/utils # Utility functions
+/types # Shared TypeScript types
+/tests
+service.test.ts
+integration.test.ts
+/frontend
+/src
+/components # Vue components
+/store # Vuex/Pinia store
+/router # Vue Router configuration
+/views # Page-level Vue components
+/utils # Utility functions
+/types # Shared TypeScript types
+/tests
+component.test.ts
+integration.test.ts
+/packages
+/database # PostgreSQL client, Prisma migrations, and database calls
+/types # Shared TypeScript types between backend and frontend
+/utils # Shared utility functions like logging and validation
+
+Deployment Flow
+
+- Each package and service has its own versioning strategy
+- Use GitHub Actions for CI/CD:
+  - Linting and testing on each commit
+  - Automatic package versioning and publishing to npm (for /packages)
+  - Backend deployment via Docker or other containerization method
+  - Frontend deployment to a hosting service
+- Versioning:
+  - Use Semantic Versioning (SemVer)
+  - Auto-increment versions based on changes
+- Deployment pipeline:
+  - On merge to main, auto-publish updated packages
+  - Deploy backend to server/container environment
+  - Deploy frontend to hosting/CDN service
+
+Best Practices
+
+1. Keep backend services modular and RESTful
+2. Implement structured logging
+3. Use environment-based configuration
+4. Implement proper error handling
+5. Follow Express.js best practices
+6. Use proper status codes and error responses
+7. Implement proper timeout handling
+8. Use connection pooling for database operations
+9. Implement proper caching strategies
+10. Follow security best practices
+
+Testing
+
+- Use Vitest for unit testing
+- Implement integration tests for backend and frontend
+- Mock external dependencies
+- Maintain test coverage thresholds
+- Structure test files alongside source code
+- Follow AAA pattern (Arrange-Act-Assert)
+
+Linting and Formatting
+
+- ESLint with TypeScript support
+- Prettier for code formatting
+- Husky for pre-commit hooks
+- Enforce consistent code style
+- Configure import sorting
+- Implement maximum line length
+- Enforce naming conventions
+
+Dependencies
+
+- Express.js for backend
+- Vue 3 for frontend
+- TypeScript for type safety
+- Vitest for testing
+- Winston for logging
+- Zod for schema validation
+- Vue Router and Pinia for state management
+
+Deployment and Package Management
+
+- Use `npm` workspaces for managing shared packages
+- Automate package publishing via CI/CD
+- Use Docker or another containerization method for backend
+- Deploy frontend using a CDN or hosting service
+- Configure CI/CD pipelines for smooth deployments

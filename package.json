@@ -1,0 +1,24 @@
+{
+  "name": "coderaft",
+  "version": "0.0.1",
+  "description": "A lightweight, smooth-sailing codebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldfadenitay/CodeRaft.git"
+  },
+  "author": "Itay Goldfaden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goldfadenitay/CodeRaft/issues"
+  },
+  "homepage": "https://github.com/goldfadenitay/CodeRaft#readme",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
