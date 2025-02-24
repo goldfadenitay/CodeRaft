@@ -5,8 +5,7 @@ import { performanceMonitor } from "./middleware/performance";
 import { addRequestId } from "./middleware/request-id";
 import { corsMiddleware } from "./middleware/cors";
 import { defaultRateLimiter } from "./middleware/rate-limit";
-// import exampleRouter from "@/domains/example/example.routes";
-// import usersRoutes from "@/domains/users/users.routes";
+import usersRouter from "@/features/users";
 
 const app = express();
 
@@ -39,8 +38,7 @@ app.get("/health", (_req, res) => {
 });
 
 // Routes
-// app.use("/api/example", exampleRouter);
-// app.use("/api/users", usersRoutes);
+app.use("/api/v1/users/", usersRouter);
 
 // Error handling should be last
 app.use(errorHandler);

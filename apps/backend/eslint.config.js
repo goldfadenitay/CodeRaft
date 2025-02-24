@@ -25,4 +25,5 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
   },
+  ignorePatterns: ["node_modules/", "dist/"],
 };

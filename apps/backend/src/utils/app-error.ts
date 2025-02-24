@@ -3,7 +3,8 @@ export class AppError extends Error {
     message: string,
     public readonly code: string,
     public readonly statusCode: number,
-    public readonly details?: unknown
+    public readonly details?: unknown,
+    public readonly originalError?: unknown
   ) {
     super(message);
     this.name = "AppError";
@@ -46,8 +47,9 @@ export class AppError extends Error {
 
   static internal(
     message: string = "Internal Server Error",
-    code: string = "INTERNAL_ERROR"
+    code: string = "INTERNAL_ERROR",
+    originalError?: unknown
   ): AppError {
-    return new AppError(message, code, 500);
+    return new AppError(message, code, 500, undefined, originalError);
   }
 }

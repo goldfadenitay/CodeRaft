@@ -2,23 +2,37 @@
   "name": "backend",
   "version": "0.0.1",
   "scripts": {
-    "dev": "nodemon --watch src -e ts,json --exec tsx src/index.ts"
+    "dev": "nodemon --watch src -e ts,json --exec tsx src/index.ts",
+    "db:start": "docker-compose up -d",
+    "db:stop": "docker-compose down",
+    "prisma:migrate": "npm run prisma:format && prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:format": "prisma format",
+    "prisma:generate": "prisma generate",
+    "lint": "eslint ./src/**/*.ts",
+    "lint:fix": "eslint ./src/**/*.ts --fix"
   },
   "author": "Itay Goldfaden",
   "description": "",
   "dependencies": {
+    "@coderaft/database": "^0.0.1",
     "@coderaft/utils": "^0.0.5",
+    "@prisma/client": "^6.4.1",
     "@types/uuid": "^10.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
+    "prisma": "^6.4.1",
     "tsx": "^4.19.3",
     "uuid": "^11.1.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.21.0",
     "nodemon": "^3.1.9"
   }
 }
