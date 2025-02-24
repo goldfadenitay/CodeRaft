@@ -18,7 +18,6 @@
   "homepage": "https://github.com/goldfadenitay/CodeRaft#readme",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "apps/database"
+    "packages/*"
   ]
 }
